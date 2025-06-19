@@ -17,8 +17,14 @@ function removeItem(e){
 function addItem(e){
     e.preventDefault();
     var input = document.getElementById('item');
-    var newItem = document.createElement('li');
-    newItem.className = 'list-group-item';
-    newItem.innerHTML = input.value + '<button class="btn btn-danger btn-sm float-right delete">X</button>';
-    itemList.appendChild(newItem);
+    var listItem = document.createElement('li');
+    listItem.className = 'list-group-item';
+    var textNode = document.createTextNode(input.value);
+    listItem.appendChild(textNode);
+    var button = document.createElement('button');
+    button.className = "btn btn-danger btn-sm float-right delete";
+    button.innerText = 'X';
+    button.addEventListener('click', removeItem);
+    listItem.appendChild(button);
+    itemList.appendChild(listItem);
 }
