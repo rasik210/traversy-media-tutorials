@@ -37,8 +37,7 @@ function addItem(e){
     var input = document.getElementById('item');
     var listItem = document.createElement('li');
     listItem.className = 'list-group-item';
-    var textNode = document.createTextNode(input.value);
-    listItem.appendChild(textNode);
+    listItem.appendChild(document.createTextNode(input.value));
     var button = document.createElement('button');
     button.className = "btn btn-danger btn-sm float-right delete";
     button.innerText = 'X';
