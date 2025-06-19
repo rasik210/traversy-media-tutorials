@@ -10,7 +10,9 @@ for (let index = 0; index < buttons.length; index++) {
 form.addEventListener('submit', addItem);
 
 function removeItem(e){
-    e.target.parentNode.remove()
+    if(confirm('Are You Sure?')){
+        e.target.parentNode.remove()
+    }
 }
 
 //add item
